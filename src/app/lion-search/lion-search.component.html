@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>lions Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let lion of lions$ | async" >
+      <a routerLink="/detail/{{lion.id}}">
+        {{lion.name}}
+      </a>
+    </li>
+  </ul>
+</div>
